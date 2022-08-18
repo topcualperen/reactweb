@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import MainPage from "./pages/MainPage/MainPage";
 import ChildPage from './pages/ChildPage/ChildPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import WalletCard from './wallet-connection/WalletCard';
 
 
 function App() {
@@ -11,10 +12,8 @@ function App() {
       
         <Navbar/>
         
-        <LoginPage/> 
+        <WalletCard/> 
         
-     
-
     </div>
   );
 }
