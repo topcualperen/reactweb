@@ -4,6 +4,7 @@ import MainPage from "./pages/MainPage/MainPage";
 import ChildPage from './pages/ChildPage/ChildPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import WalletCard from './wallet-connection/WalletCard';
+import ParentMainPage from './pages/ParentMainPage/ParentMainPage';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       
         <Navbar/>
         
-        <WalletCard/> 
+        <ParentMainPage /> 
         
     </div>
   );
