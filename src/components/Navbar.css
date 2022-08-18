@@ -1,0 +1,22 @@
+nav {
+     padding: 30px 7%;
+     top: 0;
+     width: 100%;
+     z-index: 1;
+}
+
+.logo {
+     cursor: pointer;
+     width: 120px;
+}
+
+.logo a {
+     text-decoration: none;
+}
+
+nav .logo a {
+     color: white;
+     font-family: 'Montserrat', sans-serif;
+     font-size: 27px;
+     font-style: bold;
+}
