@@ -13,7 +13,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Grid } from "@mui/material";
 import {Link} from "react-router-dom";
 
-export default function Menu() {
+export default function ChildMenu() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
@@ -86,13 +86,8 @@ export default function Menu() {
               </ListItemIcon>
               <ListItemText style={{color:"#9EC1F7"}}>Profile</ListItemText>
             </MenuItem>
-            <MenuItem sx={{ padding: "25px" }}>
-              <ListItemIcon>
-                <StarIcon style={{color:"#0A46A9"}}/>
-              </ListItemIcon>
-              <ListItemText style={{color:"#9EC1F7"}}>Çocuklar</ListItemText>
-            </MenuItem>
-            <br /> <br/> <br/>
+
+            <br /> <br/> <br/> <br /> <br/> <br/>
             <MenuItem sx={{ padding: "25px" }}>
               <ListItemIcon>
                 <LogoutIcon style={{color:"#0A46A9"}}/>

@@ -1,21 +1,37 @@
 import logo from './logo.svg';
 import Navbar from "./components/Navbar";
 import MainPage from "./pages/MainPage/MainPage";
-import ChildPage from './pages/ChildPage/ChildPage';
+import ChildMainPage from './pages/ChildMainPage/ChildMainPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import WalletCard from './wallet-connection/WalletCard';
 import ParentMainPage from './pages/ParentMainPage/ParentMainPage';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
 
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       
         <Navbar/>
+        <Routes>
         
-        <ParentMainPage /> 
+        <Route path="/main" element={<MainPage />} />
+        <Route path="/child" element={<ChildMainPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/wallet" element={<WalletCard />} />
+        <Route path="/parentMain" element={<ParentMainPage />} />
         
-    </div>
+        
+        </Routes>
+        
+      
+      
+      </div>
+
+    </Router>
+
   );
 }
 

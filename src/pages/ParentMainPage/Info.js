@@ -23,10 +23,10 @@ export default function Info() {
             <h5 style={{color:"black",padding:"10px"}}>Cüzdanım</h5>
             <AccountBalanceWalletIcon style={{width:"30px", height:"30px", margin:"20px"}}/>
       </div>
-      <p className="eth--component">1000 eth</p> 
+      <p className="eth--component"></p> 
   
     </Box>
-       
+
 
     )
 }
