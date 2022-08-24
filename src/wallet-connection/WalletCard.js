@@ -1,5 +1,9 @@
 import React, {useState} from 'react'
 import {ethers} from 'ethers'
+import abi from "../data/contract.json";
+
+const CONTRACT_ADDRESS = "0xD4F35a14eb8D9882beCB22594c9A4BaDBAe5C5d1";
+export let contract;
 
 const WalletCard = () => {
 
@@ -8,20 +12,23 @@ const WalletCard = () => {
 	const [userBalance, setUserBalance] = useState(null);
 	const [connButtonText, setConnButtonText] = useState('Connect Wallet');
 
-	const connectWalletHandler = () => {
+	const connectWalletHandler = async () => {
 		if (window.ethereum && window.ethereum.isMetaMask) {
 			console.log('MetaMask Here!');
 
-			window.ethereum.request({ method: 'eth_requestAccounts'})
-			.then(result => {
+			try {
+				
+				const result = await window.ethereum.request({ method: 'eth_requestAccounts'})
+				//eth_getAccounts
 				accountChangedHandler(result[0]);
 				setConnButtonText('Connect Wallet');
 				getAccountBalance(result[0]);
-			})
-			.catch(error => {
-				setErrorMessage(error.message);
+				const provider = new ethers.providers.Web3Provider(window.ethereum);
+				contract = new ethers.Contract(CONTRACT_ADDRESS, abi, provider.getSigner());
 			
-			});
+			} catch (error) {
+				setErrorMessage(error.message);
+			}
 
 		} else {
 			console.log('Need to install MetaMask');
@@ -33,6 +40,7 @@ const WalletCard = () => {
 	const accountChangedHandler = (newAccount) => {
 		setDefaultAccount(newAccount);
 		getAccountBalance(newAccount.toString());
+
 	}
 
 	const getAccountBalance = (account) => {
@@ -67,6 +75,7 @@ const WalletCard = () => {
 				<h3>Balance: {userBalance}</h3>
 			</div>
 			{errorMessage}
+			{		console.log("contract: ", contract)}
 		</div>
 	);
 }
