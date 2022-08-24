@@ -19,7 +19,7 @@ function App() {
         <Navbar/>
         <Routes>
         
-        <Route path="/main" element={<MainPage />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/child" element={<ChildMainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/wallet" element={<WalletCard />} />
