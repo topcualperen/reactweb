@@ -1,5 +1,6 @@
 import React from 'react'
 import "./LoginPage.css"
+import {Link} from "react-router-dom"
 
  const LoginPage = () => {
   return (
@@ -34,9 +35,9 @@ import "./LoginPage.css"
                </form>
 
                <div class="button">
-                    <button>
+               <Link to = "ChildPage"> {/* url de nereye gideceğini belirtiyor */}
                          Kayıt Ol/Güncelle
-                    </button>
+                    </Link>
                </div>
 
           </div>
