@@ -10,8 +10,6 @@ import ChildPage from './pages/ChildPage/ChildPage.js';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
 
 function App() {
   return (
