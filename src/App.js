@@ -21,7 +21,7 @@ function App() {
         
         <Route path="/" element={<MainPage />} />
         <Route path="/child" element={<ChildMainPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/LoginPage" element={<LoginPage />} />
         <Route path="/wallet" element={<WalletCard />} />
         <Route path="/parentMain" element={<ParentMainPage />} />
         <Route path="childPage" element={<ChildPage />}/>
