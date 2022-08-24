@@ -22,9 +22,13 @@ export default function ChildInfo() {
                
                 
             </div>
-            <img src="./img/ekle-button.svg"></img>
-            <img src="./img/cikar-button.svg"></img>
-            <img src="./img/guncelle-button.svg"></img>
+            <div className="container-buttons">
+                <img src="./img/ekle-button.svg"></img>
+                <img src="./img/cikar-button.svg"></img>
+                <img src="./img/guncelle-button.svg"></img>
+            
+            </div>
+         
         
         </div>
   

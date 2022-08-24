@@ -19,6 +19,7 @@ const WalletCard = () => {
 			try {
 				
 				const result = await window.ethereum.request({ method: 'eth_requestAccounts'})
+				//eth_getAccounts
 				accountChangedHandler(result[0]);
 				setConnButtonText('Connect Wallet');
 				getAccountBalance(result[0]);
@@ -39,6 +40,7 @@ const WalletCard = () => {
 	const accountChangedHandler = (newAccount) => {
 		setDefaultAccount(newAccount);
 		getAccountBalance(newAccount.toString());
+
 	}
 
 	const getAccountBalance = (account) => {
@@ -73,6 +75,7 @@ const WalletCard = () => {
 				<h3>Balance: {userBalance}</h3>
 			</div>
 			{errorMessage}
+			{		console.log("contract: ", contract)}
 		</div>
 	);
 }

@@ -74,30 +74,33 @@ export default function Menu() {
                 style={{color:"#0A46A9"}}/>
               </Grid>
             </Grid>
+
             <MenuItem sx={{ padding: "25px" }}>
               <ListItemIcon>
                 <HomeIcon style={{color:"#0A46A9"}}/>
               </ListItemIcon>
-              <Link to="/main"><ListItemText style={{color:"#9EC1F7"}}>Anasayfa</ListItemText></Link>
+              <Link to="/parentMain"><ListItemText style={{color:"#9EC1F7"}}>Anasayfa</ListItemText></Link>
             </MenuItem>
+
             <MenuItem sx={{ padding: "25px" }}>
               <ListItemIcon>
                 <PersonIcon style={{color:"#0A46A9"}}/>
               </ListItemIcon>
-              <ListItemText style={{color:"#9EC1F7"}}>Profile</ListItemText>
+             <Link to="/login"><ListItemText style={{color:"#9EC1F7"}}>Profile</ListItemText></Link> 
             </MenuItem>
+
             <MenuItem sx={{ padding: "25px" }}>
               <ListItemIcon>
                 <StarIcon style={{color:"#0A46A9"}}/>
               </ListItemIcon>
-              <ListItemText style={{color:"#9EC1F7"}}>Çocuklar</ListItemText>
+             <Link to="/childPage"><ListItemText style={{color:"#9EC1F7"}}>Çocuklar</ListItemText></Link> 
             </MenuItem>
             <br /> <br/> <br/>
             <MenuItem sx={{ padding: "25px" }}>
               <ListItemIcon>
                 <LogoutIcon style={{color:"#0A46A9"}}/>
               </ListItemIcon>
-              <ListItemText style={{color:"#9EC1F7"}}>Çıkış</ListItemText>
+              <Link to="/main"><ListItemText style={{color:"#9EC1F7"}}>Çıkış</ListItemText></Link>
             </MenuItem>
           </MenuList>
         </Paper>

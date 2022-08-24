@@ -9,7 +9,7 @@ container{
 
 .child-container{
     background: rgba(224, 191, 205, 0.4);
-    border-radius: 20px;border-radius: 20px;
+    border-radius: 20px;
     padding: 20px;
     margin-left: 15px;
     height:350px;
@@ -52,6 +52,11 @@ input {
     left: 100px;
     top: 200px;
     border-radius: 20px;
+}
+.container-buttons{
+   
+    padding: 20px;
+    
 }
 
 menuList {
