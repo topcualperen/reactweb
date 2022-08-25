@@ -35,7 +35,7 @@ import {Link} from "react-router-dom"
                </form>
 
                <div class="button">
-               <Link to = "ChildPage"> {/* url de nereye gideceğini belirtiyor */}
+               <Link to = "/ChildPage"> {/* url de nereye gideceğini belirtiyor */}
                          Kayıt Ol/Güncelle
                     </Link>
                </div>

@@ -86,7 +86,7 @@ export default function Menu() {
               <ListItemIcon>
                 <PersonIcon style={{color:"#0A46A9"}}/>
               </ListItemIcon>
-             <Link to="/login"><ListItemText style={{color:"#9EC1F7"}}>Profile</ListItemText></Link> 
+             <Link to="/LoginPage"><ListItemText style={{color:"#9EC1F7"}}>Profile</ListItemText></Link> 
             </MenuItem>
 
             <MenuItem sx={{ padding: "25px" }}>
@@ -100,7 +100,7 @@ export default function Menu() {
               <ListItemIcon>
                 <LogoutIcon style={{color:"#0A46A9"}}/>
               </ListItemIcon>
-              <Link to="/main"><ListItemText style={{color:"#9EC1F7"}}>Çıkış</ListItemText></Link>
+              <Link to="/"><ListItemText style={{color:"#9EC1F7"}}>Çıkış</ListItemText></Link>
             </MenuItem>
           </MenuList>
         </Paper>

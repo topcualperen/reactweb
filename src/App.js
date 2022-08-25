@@ -17,14 +17,14 @@ function App() {
       <div className="App">
       
         <Navbar/>
-        
+
         <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/child" element={<ChildMainPage />} />
         <Route path="/LoginPage" element={<LoginPage />} />
         <Route path="/wallet" element={<WalletCard />} />
         <Route path="/parentMain" element={<ParentMainPage />} />
-        <Route path="childPage" element={<ChildPage />}/>
+        <Route path="/childPage" element={<ChildPage />}/>
         </Routes>
         
       
