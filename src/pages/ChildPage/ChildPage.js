@@ -8,6 +8,7 @@ export default function ChildPage(){
         <div class="main">
           <Menu />
           <ChildPageInfo />
+          
         </div>
    
     </>
