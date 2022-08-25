@@ -7,7 +7,7 @@ import {Link} from "react-router-dom"
    
      <div class="main">
      <h5>
-          Hesap Oluşturma
+          Profil
      </h5>
      <div class="col">
           <div class="one">
@@ -35,7 +35,7 @@ import {Link} from "react-router-dom"
                </form>
 
                <div class="button">
-               <Link to = "ChildPage"> {/* url de nereye gideceğini belirtiyor */}
+               <Link to = "/parentMain"> {/* url de nereye gideceğini belirtiyor */}
                          Kayıt Ol/Güncelle
                     </Link>
                </div>

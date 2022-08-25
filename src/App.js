@@ -21,10 +21,10 @@ function App() {
         
         <Route path="/main" element={<MainPage />} />
         <Route path="/child" element={<ChildMainPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/loginPage" element={<LoginPage />} />
         <Route path="/wallet" element={<WalletCard />} />
         <Route path="/parentMain" element={<ParentMainPage />} />
-        <Route path="childPage" element={<ChildPage />}/>
+        <Route path="/childPage" element={<ChildPage />}/>
         </Routes>
         
       

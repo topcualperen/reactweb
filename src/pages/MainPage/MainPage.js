@@ -12,7 +12,7 @@ import {Link} from "react-router-dom"
                 Kolay, Güvenilir ve<br/>Hızlı Kripto Cüzdanı
           </h1>
           <div class="buttons">
-          <Link to = "LoginPage"> {/* url de nereye gideceğini belirtiyor */}
+          <Link to = "/loginPage"> {/* url de nereye gideceğini belirtiyor */}
                      Cüzdanı Bağlayınız
                   </Link>
           </div>

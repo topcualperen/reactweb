@@ -78,21 +78,16 @@ export default function ChildMenu() {
               <ListItemIcon>
                 <HomeIcon style={{color:"#0A46A9"}}/>
               </ListItemIcon>
-              <Link to="/main"><ListItemText style={{color:"#9EC1F7"}}>Anasayfa</ListItemText></Link>
+              <Link to="/child"><ListItemText style={{color:"#9EC1F7"}}>Anasayfa</ListItemText></Link>
             </MenuItem>
-            <MenuItem sx={{ padding: "25px" }}>
-              <ListItemIcon>
-                <PersonIcon style={{color:"#0A46A9"}}/>
-              </ListItemIcon>
-              <ListItemText style={{color:"#9EC1F7"}}>Profile</ListItemText>
-            </MenuItem>
+
 
             <br /> <br/> <br/> <br /> <br/> <br/>
             <MenuItem sx={{ padding: "25px" }}>
               <ListItemIcon>
                 <LogoutIcon style={{color:"#0A46A9"}}/>
               </ListItemIcon>
-              <ListItemText style={{color:"#9EC1F7"}}>Çıkış</ListItemText>
+              <Link to="/main"><ListItemText style={{color:"#9EC1F7"}}>Çıkış</ListItemText></Link>
             </MenuItem>
           </MenuList>
         </Paper>
