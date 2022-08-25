@@ -4,6 +4,8 @@ import { Button, Table, Form, Input, Modal } from "antd";
 
 export default function DataTable() {
   const [isWithdrawStateOpen, setIsWithdrawStateOpen] = useState(false);
+  const [isSenderStateOpen, setIsSenderStateOpen] = useState(false);
+  const [isChildStateOpen, setIsChildOpen] = useState(false);
   const [selectedChild, setSelectedChild] = useState();
   const [rows, setRows] = useState();
 
@@ -14,6 +16,13 @@ export default function DataTable() {
     setIsWithdrawStateOpen(false);
   };
 
+  const handleSend = (data) => {
+    console.log("giden:", {data, selectedChild});
+    //contracta gönder await
+
+    setIsSenderStateOpen(false);
+  };
+
   const handleAddChild = (child) => {
     console.log("cocuk ekle:", child);
     //tx = await contract...
@@ -22,6 +31,7 @@ export default function DataTable() {
     setRows((prev) => {
       return [...prev, child]
     })
+    setIsChildOpen(false);
   }
 
   useEffect(() => {
@@ -42,21 +52,24 @@ export default function DataTable() {
 
   const columns = [
     {
-      dataIndex: "lastName",
-      title: "Last name",
+      dataIndex: "lastName", 
+      title: "Ad ve Soyad",
     },
     {
       dataIndex: "age",
-      title: "Age",
+      title: "Devredilecek Miktar",
     },
     {
       dataIndex: "fullName",
-      title: "Full name",
+      title: "Devir Tarihi",
     },
     {
       width: 1,
       render: (_, row) => (
-        <Button onClick={() => console.log(row.lastName)}>Yatır</Button>
+        <Button onClick={() => {
+          setSelectedChild(row.lastName)
+          setIsSenderStateOpen(true)
+        }}>Yatır</Button>
       ),
     },
     {
@@ -71,7 +84,8 @@ export default function DataTable() {
   ];
 
   return (
-    <div style={{ height: 400, width: "100%", padding: "35px" }}>
+    
+    <div style={{ height: 400, width: "100%", padding: "25px" }}>
       <Table
         className="deneme-class"
         dataSource={rows}
@@ -79,17 +93,57 @@ export default function DataTable() {
         pagination={{ pageSize: 6 }}
       />
 
-      <Button onClick={() => handleAddChild({lastName: "asdt"})}>Ekle</Button>
+      <Button onClick={() => setIsChildOpen(true)}>Ekle</Button>
 
       <Modal
-        title="Basic Modal"
+        title="CrypOcean"
+        visible={isChildStateOpen}
+        footer={null}
+        // onOk={handleOk}
+        onCancel={() => setIsChildOpen(false)}
+      >
+        <Form onFinish={handleAddChild} layout="vertical">
+          <Form.Item label="Ad ve Soyad" name="name">
+            <Input type="text"/>
+          </Form.Item>
+          <Form.Item label="Cüzdan Adresi" name="adress">
+            <Input type="text"/>
+          </Form.Item>
+          <Form.Item label="Çekebileceği Tarih" name="date">
+            <Input type="date"/>
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">Ekle</Button>
+          </Form.Item>
+        </Form>
+      </Modal>
+
+      <Modal
+        title="CrypOcean"
+        visible={isSenderStateOpen}
+        footer={null}
+        // onOk={handleOk}
+        onCancel={() => setIsSenderStateOpen(false)}
+      >
+        <Form onFinish={handleSend} layout="vertical">
+          <Form.Item label="Yatırılacak Miktar" name="value">
+            <Input type="number"/>
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">Yatır</Button>
+          </Form.Item>
+        </Form>
+      </Modal>
+
+      <Modal
+        title="CrypOcean"
         visible={isWithdrawStateOpen}
         footer={null}
         // onOk={handleOk}
         onCancel={() => setIsWithdrawStateOpen(false)}
       >
         <Form onFinish={handleWithdraw} layout="vertical">
-          <Form.Item label="Yatırılacak Miktar" name="value">
+          <Form.Item label="Çekilecek Miktar" name="value">
             <Input type="number"/>
           </Form.Item>
           <Form.Item>
