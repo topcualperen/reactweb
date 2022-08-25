@@ -7,7 +7,7 @@
      box-sizing: border-box;
 }
 
-html { 
+.page-content { 
     background: url(/public/img/newbackground.png) no-repeat center center fixed; 
      -webkit-background-size: cover;
      -moz-background-size: cover;

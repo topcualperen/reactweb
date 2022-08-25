@@ -1,29 +1,24 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
 import "./ChildPage.css"
+import { Table } from "antd";
 
 
 
 const columns = [
-  { field: 'lastName', 
-  headerName: 'Last name', 
-  width: 130
+  { 
+    dataIndex: 'lastName', 
+   name: 'Last name', 
+   width: 130
  },
   {
-    field: 'age',
-    headerName: 'Age',
-    type: 'number',
+    dataIndex: 'age',
+    name: 'Age',
     width: 290,
-    alignItems: "center"
   },
   {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
+    dataIndex: 'fullName',
+    name: 'Full name',
     width: 290,
-    valueGetter: (params) =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`
   },
 ];
 
@@ -42,13 +37,10 @@ const rows = [
 export default function DataTable() {
   return (
     <div style={{ height: 400, width: '100%'}}>
-      <DataGrid sx={{color: "white", marginLeft: "1px"}}
-        rows={rows} 
+      {/* <Table
+        dataSource={rows} 
         columns={columns}
-        pageSize={15}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-      />
+      /> */}
     </div>
   );
 }

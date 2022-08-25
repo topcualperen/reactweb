@@ -1,4 +1,4 @@
-nav {
+.nav-class {
      padding: 30px 7%;
      top: 0;
      width: 100%;
@@ -14,7 +14,11 @@ nav {
      text-decoration: none;
 }
 
-nav .logo a {
+.nav-class * {
+     color: white;
+}
+
+.nav-class .logo a {
      color: white;
      font-family: 'Montserrat', sans-serif;
      font-size: 27px;
