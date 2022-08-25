@@ -80,12 +80,6 @@ export default function ChildMenu() {
               </ListItemIcon>
               <Link to="/main"><ListItemText style={{color:"#9EC1F7"}}>Anasayfa</ListItemText></Link>
             </MenuItem>
-            <MenuItem sx={{ padding: "25px" }}>
-              <ListItemIcon>
-                <PersonIcon style={{color:"#0A46A9"}}/>
-              </ListItemIcon>
-              <ListItemText style={{color:"#9EC1F7"}}>Profile</ListItemText>
-            </MenuItem>
 
             <br /> <br/> <br/> <br /> <br/> <br/>
             <MenuItem sx={{ padding: "25px" }}>

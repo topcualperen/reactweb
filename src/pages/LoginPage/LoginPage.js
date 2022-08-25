@@ -7,7 +7,7 @@ import {Link} from "react-router-dom"
    
      <div class="main">
      <h5>
-          Hesap Oluşturma
+          Hesap Oluşturma<br/>Güncelleme
      </h5>
      <div class="col">
           <div class="one">
