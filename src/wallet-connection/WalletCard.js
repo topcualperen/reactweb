@@ -1,13 +1,15 @@
 import { ethers } from "ethers";
 import abi from "../data/contract.json";
 
-const CONTRACT_ADDRESS = "0xD4F35a14eb8D9882beCB22594c9A4BaDBAe5C5d1";
+const CONTRACT_ADDRESS = "0x9f0100e8cbae8e769b3b92413c4b2e7b3cc0a77e";
+
+let selectedAddress;
 
 export const getContract = async () => {
   if (window.contract) return window.contract;
 
   if (await checkConnection()) {
-    initContract();
+    await initContract();
     return window.contract;
   }
 
@@ -15,13 +17,17 @@ export const getContract = async () => {
   return window.contract;
 };
 
-const initContract = () => {
+export const getSelectedAddress = async () => {
+  await getContract();
+  return selectedAddress;
+};
+
+const initContract = async () => {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
-  window.contract = new ethers.Contract(
-    CONTRACT_ADDRESS,
-    abi,
-    provider.getSigner()
-  );
+  const signer = provider.getSigner();
+  window.contract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
+
+  selectedAddress = await signer.getAddress();
 };
 
 const checkConnection = async () => {
@@ -35,7 +41,7 @@ const connectWallet = async () => {
   checkMetamaskAvailable();
 
   await window.ethereum.request({ method: "eth_requestAccounts" });
-  initContract();
+  await initContract();
 };
 
 const checkMetamaskAvailable = () => {
