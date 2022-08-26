@@ -6,7 +6,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import WalletCard from './wallet-connection/WalletCard';
 import ParentMainPage from './pages/ParentMainPage/ParentMainPage';
 import ChildPage from './pages/ChildPage/ChildPage.js';
-
+import Contact from './pages/ContactPage/Contact';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import InfoMain from './pages/InfoPage/InfoMain';
 
@@ -27,6 +27,7 @@ function App() {
         <Route path="/parentMain" element={<ParentMainPage />} />
         <Route path="/childPage" element={<ChildPage />}/>
         <Route path="/InfoMain" element={<InfoMain />} />
+        <Route path="/Contact" element={<Contact/>} />
         </Routes>
         
       
