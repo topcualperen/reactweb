@@ -7,7 +7,10 @@ const Info5 = () => {
      const navigate = useNavigate();
   return (
     <div class="main">
-      <img src="/img/Page5.svg"></img>
+      <div class="imagePage5Info">
+        <img src="/img/Page5.svg"></img>
+      </div>
+      
 
       <p>
         <h1>Kısaca Ethereum (ETH) Nedir?</h1>
