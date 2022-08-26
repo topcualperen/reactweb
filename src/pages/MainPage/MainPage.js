@@ -1,6 +1,7 @@
 import React from 'react'
 import "./MainPage.css"
 import {Link} from "react-router-dom"
+import WalletCard from '../../wallet-connection/WalletCard'
 
 
  const MainPage = () => {
@@ -15,6 +16,9 @@ import {Link} from "react-router-dom"
           <Link to = "LoginPage"> {/* url de nereye gideceğini belirtiyor */}
                      Cüzdanı Bağlayınız
                   </Link>
+                  <button onClick={
+                    ()=> {}
+                  }>Bagla</button>
           </div>
           <div>
                 <img src="/img/btcSmall.svg"/>

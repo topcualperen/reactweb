@@ -3,7 +3,6 @@ import {ethers} from 'ethers'
 import abi from "../data/contract.json";
 
 const CONTRACT_ADDRESS = "0xD4F35a14eb8D9882beCB22594c9A4BaDBAe5C5d1";
-export let contract;
 
 const WalletCard = () => {
 
@@ -24,7 +23,7 @@ const WalletCard = () => {
 				setConnButtonText('Connect Wallet');
 				getAccountBalance(result[0]);
 				const provider = new ethers.providers.Web3Provider(window.ethereum);
-				contract = new ethers.Contract(CONTRACT_ADDRESS, abi, provider.getSigner());
+				window.contract = new ethers.Contract(CONTRACT_ADDRESS, abi, provider.getSigner());
 			
 			} catch (error) {
 				setErrorMessage(error.message);
@@ -75,7 +74,7 @@ const WalletCard = () => {
 				<h3>Balance: {userBalance}</h3>
 			</div>
 			{errorMessage}
-			{		console.log("contract: ", contract)}
+			{		console.log("contract: ", window.contract)}
 		</div>
 	);
 }
