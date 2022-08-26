@@ -69,7 +69,7 @@
       width: 350px;
       height: 400px;
       margin-top: -250px;
-      margin-left: 13%;
+      margin-left: 20%;
  }
  
  .row .glass img {
@@ -92,7 +92,7 @@
       margin-top: 10px;
  }
  
- .glass .buttons2 button {
+ .glass .buttons2 .InfoButton {
       display: inline-block;
       width: fit-content;
       padding: 12px 60px;
@@ -110,7 +110,7 @@
       transition: 0.5s ease-in-out;
  }
  
-.glass .buttons2 a {
+.glass .buttons2 .ContactButton {
       display: inline-block;
       width: fit-content;
       padding: 12px 60px;
@@ -129,16 +129,16 @@
       transition: 0.5s ease-in-out;
  }
  
- .row .glass a {
+ .row .glass .ContactButton {
       margin-bottom: 150px;
  }
  
- .glass .buttons2 button:hover {
+ .glass .buttons2 .InfoButton:hover {
       background-color: rgb(174, 18, 185);
       transform: translateY(-7px);
  }    
  
-.glass .buttons2 a:hover {
+.glass .buttons2 .ContactButton:hover {
       background-color: rgba(245, 245, 245, 0.200);
       transform: translateY(-7px);
  }

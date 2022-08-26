@@ -76,6 +76,15 @@
      margin-left: 30%;
 }
 
+.col .two Button{
+     margin-top: 25%;
+     margin-left: 80%;
+     transition: 0.5s ease-in-out;
+     box-shadow: 0 0 100px blue; 
+}
+
+
+
 .col .two .button {
      margin-top: 50px;
      margin-left: 230px;

@@ -27,12 +27,16 @@ import {Link} from "react-router-dom"
                 <img src="/img/bigBtc.svg" alt="btc"/>
           </div>
           <div class="buttons2">
-                <button>
-                    Bilgi Al
-                </button>
-                <a href="#">
-                    İletişim
-                </a>
+              <div class="InfoButton">
+                <Link to = "InfoMain"> {/* url de nereye gideceğini belirtiyor */}
+                      Bilgi Al
+                  </Link>
+              </div>
+              <div class="ContactButton">
+                <Link to = "Contact"> {/* url de nereye gideceğini belirtiyor */}
+                        İletişim
+                  </Link>
+              </div>          
           </div>
       </div>
     </div>
