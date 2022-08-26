@@ -28,12 +28,12 @@ import {Link} from "react-router-dom"
           </div>
           <div class="buttons2">
               <div class="InfoButton">
-                <Link to = "InfoMain"> {/* url de nereye gideceğini belirtiyor */}
+                <Link to = "InfoMain" className="main-page-buttons"> {/* url de nereye gideceğini belirtiyor */}
                       Bilgi Al
                   </Link>
               </div>
               <div class="ContactButton">
-                <Link to = "Contact"> {/* url de nereye gideceğini belirtiyor */}
+                <Link to = "Contact" className="main-page-buttons"> {/* url de nereye gideceğini belirtiyor */}
                         İletişim
                   </Link>
               </div>          
