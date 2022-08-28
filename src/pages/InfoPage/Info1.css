@@ -3,11 +3,18 @@
      color: white;
      margin-top: 7%;
      font-size: 20px;
-     margin-left: 4%;
+     margin-left: 1%;
      margin-right: 4%;
      
 }
 
 .main p h1{
      color: white;
+}
+
+.main .InfoPage1Img {
+     width: 70%;
+     height: 70%;
+     margin-top: 8%;
+     margin-left: 3%;
 }

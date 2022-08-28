@@ -4,7 +4,9 @@ import "./Info1.css";
 const Info1 = () => {
   return (
     <div class="main">
-      <img src="/img/CryptoLogo.svg"></img>
+      <div class="InfoPage1Img">
+        <img src="/img/CryptoLogo.svg"></img>
+      </div>
       
       <p>
       <h1>CryptOcean Nedir?</h1>
