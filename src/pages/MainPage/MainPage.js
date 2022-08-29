@@ -16,9 +16,7 @@ import WalletCard from '../../wallet-connection/WalletCard'
           <Link to = "LoginPage"> {/* url de nereye gideceğini belirtiyor */}
                      Cüzdanı Bağlayınız
                   </Link>
-                  {/* <button onClick={
-                    ()=> {}
-                  }>Bagla</button> */}
+                  
           </div>
           <div>
                 <img src="/img/btcSmall.svg"/>
