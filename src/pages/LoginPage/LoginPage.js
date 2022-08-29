@@ -33,9 +33,9 @@ const LoginPage = () => {
           <form action="">
             <input type="date" name="tarih" placeholder="Doğum Tarihi" />
           </form>
-          <form action="">
+          {/* <form action="">
             <input type="password" id="pass" name="sifre" placeholder="Şifre" />
-          </form>
+          </form> */}
 
           {/* <div class="button">
                <Link to = "/ChildPage">

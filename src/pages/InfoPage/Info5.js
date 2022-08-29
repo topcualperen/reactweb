@@ -11,8 +11,8 @@ const Info5 = () => {
         <img src="/img/Page5.svg"></img>
       </div>
       
-
-      <p>
+      <div class="InfoPage5Text">
+        <p>
         <h1>Kısaca Ethereum (ETH) Nedir?</h1>
         Ethereum blockchain sistemi üzerine kurulu akıllı sözleşme
         işlevselliğine sahip, açık kaynak kodlu ve blok tabanlı dağıtılmış
@@ -22,6 +22,7 @@ const Info5 = () => {
         Ethereum, 2015 yılında piyasaya sürülmüştür ve Bitcoin'den sonra en
         fazla piyasa değerine sahip dijital para birimidir.
       </p>
+      </div>
       <div class="InfoMainButton">
       <Button type="primary" onClick={() => navigate("/")}>
             Ana Sayfa

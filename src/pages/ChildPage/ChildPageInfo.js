@@ -128,7 +128,7 @@ export default function DataTable() {
         pagination={{ pageSize: 6 }}
       />
 
-      <Button onClick={() => setIsChildOpen(true)}>Ekle</Button>
+      <Button onClick={() => setIsChildOpen(true)}>Çocuk Ekle</Button>
 
       <Modal
         title="CrypOcean"
@@ -136,6 +136,7 @@ export default function DataTable() {
         footer={null}
         // onOk={handleOk}
         onCancel={() => setIsChildOpen(false)}
+        style={{backdropFilter:"blur(10px)"}}
       >
         <Form onFinish={handleAddChild} layout="vertical">
           <Form.Item label="Ad ve Soyad" name="name">
@@ -149,7 +150,7 @@ export default function DataTable() {
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit">
-              Ekle
+              Çocuk Ekle
             </Button>
           </Form.Item>
         </Form>
