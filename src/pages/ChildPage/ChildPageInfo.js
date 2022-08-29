@@ -25,7 +25,7 @@ export default function DataTable() {
     //contracta gönder await
 
     setIsSenderStateOpen(false);
-    PchildBalance(data.value);
+    sendToChild(data.value);
   };
 
   const handleAddChild = async(child) => {
@@ -38,7 +38,7 @@ export default function DataTable() {
     });
     setIsChildOpen(false);
   };
-  const PchildBalance= async(value) =>{
+  const sendToChild= async(value) =>{
     const contract = await getContract();
     const tx = await contract.send(selectedChild.addr,{value});
     await tx.wait();
