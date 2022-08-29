@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
       <nav className='nav-class'>     
             <div class="logo">
-                  <a href="#">
+                  <a href="http://localhost:3000/">
                         <h5>
                             CryptOcean     
                         </h5>
