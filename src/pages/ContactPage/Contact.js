@@ -7,7 +7,8 @@ const Contact = () => {
   const navigate = useNavigate();
   return (
     <div class="main">
-      <p>
+      <div class="ContactMainText">
+        <p>
         Daha Detaylı Bilgi Ve
         <br />
         Destek Hizmetleri İçin
@@ -19,6 +20,8 @@ const Contact = () => {
         <br />
         destek@cryptocean.com
       </p>
+      </div>
+      
       <img src="/img/phone.svg"></img>
 
       <div class="ContactMainButton">
