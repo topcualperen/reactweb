@@ -13,7 +13,8 @@ export default function ChildInfo() {
     let [childWithdrawDate, setChildWithdrawDate] = useState();
     const getChildBalance = async () => {
         const contract = await getContract();
-        const child = await contract.provider.getBalance("0x3C926421417bc23AB0A350aDCd516b1bcCd7d242");
+        const address = await contract.signer.getAddress();
+        const child = await contract.provider.getBalance(address);
         setChildBalance(ethers.utils.formatEther(child));
         console.log("balance of child ",child);
     }
