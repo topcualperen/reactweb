@@ -114,6 +114,7 @@ export default function DataTable() {
         footer={null}
         // onOk={handleOk}
         onCancel={() => setIsChildOpen(false)}
+        style={{backdropFilter:"blur(10px)"}}
       >
         <Form onFinish={handleAddChild} layout="vertical">
           <Form.Item label="Ad ve Soyad" name="name">
