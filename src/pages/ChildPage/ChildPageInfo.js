@@ -106,7 +106,7 @@ export default function DataTable() {
         pagination={{ pageSize: 6 }}
       />
 
-      <Button onClick={() => setIsChildOpen(true)}>Ekle</Button>
+      <Button onClick={() => setIsChildOpen(true)}>Çocuk Ekle</Button>
 
       <Modal
         title="CrypOcean"
@@ -127,7 +127,7 @@ export default function DataTable() {
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit">
-              Ekle
+              Çocuk Ekle
             </Button>
           </Form.Item>
         </Form>
