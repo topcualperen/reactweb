@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import "./ChildPage.css";
 import { Button, Table, Form, Input, Modal } from "antd";
-import { getContract } from "../../wallet-connection/WalletCard";
+import { getContract, getSelectedAddress } from "../../wallet-connection/WalletCard";
+import { ethers } from "ethers";
+import * as dayjs from "dayjs";
 
 export default function DataTable() {
   const [isWithdrawStateOpen, setIsWithdrawStateOpen] = useState(false);
@@ -15,6 +17,7 @@ export default function DataTable() {
     //contracta gönder await
 
     setIsWithdrawStateOpen(false);
+    
   };
 
   const handleSend = (data) => {
@@ -22,31 +25,50 @@ export default function DataTable() {
     //contracta gönder await
 
     setIsSenderStateOpen(false);
+    PchildBalance(data.value);
   };
 
-  const handleAddChild = (child) => {
+  const handleAddChild = async(child) => {
     console.log("cocuk ekle:", child);
     //tx = await contract...
     //await tx.wait()
-
+    await setChildren(child);
     setRows((prev) => {
       return [...prev, child];
     });
     setIsChildOpen(false);
   };
-
-  const getCildren = async () => {
+  const PchildBalance= async(value) =>{
     const contract = await getContract();
-    const children = await contract.getChildrenList(
-      "0x78CE9a3242aE67BDa4C27Ed4bf798A647acd5B9C"
-    );
+    const tx = await contract.send(selectedChild.addr,{value});
+    await tx.wait();
+    
+
+    console.log("child's balance: ",tx);
+    
+    getChildren();
+    
+    
+  }
+
+  const getChildren = async () => {
+    const contract = await getContract();
+    const children = await contract.getChildrenList(await getSelectedAddress());
 
     console.log("Gelen çocuklar: ", children);
     setRows(children);
   };
+  const setChildren = async (child) =>{
+    
+    const contract = await getContract();
+    const tx = await contract.addChild(child.address,child.name,dayjs(child.date).unix());
+    await tx.wait();
+
+  }
 
   useEffect(() => {
-    getCildren();    
+    
+    getChildren();    
   }, []);
 
   const columns = [
@@ -74,7 +96,7 @@ export default function DataTable() {
       render: (_, row) => (
         <Button
           onClick={() => {
-            setSelectedChild(row.lastName);
+            setSelectedChild(row);
             setIsSenderStateOpen(true);
           }}
         >
@@ -87,7 +109,7 @@ export default function DataTable() {
       render: (_, row) => (
         <Button
           onClick={() => {
-            setSelectedChild(row.lastName);
+            setSelectedChild(row);
             setIsWithdrawStateOpen(true);
           }}
         >
@@ -119,7 +141,7 @@ export default function DataTable() {
           <Form.Item label="Ad ve Soyad" name="name">
             <Input type="text" />
           </Form.Item>
-          <Form.Item label="Cüzdan Adresi" name="adress">
+          <Form.Item label="Cüzdan Adresi" name="address">
             <Input type="text" />
           </Form.Item>
           <Form.Item label="Çekebileceği Tarih" name="date">
