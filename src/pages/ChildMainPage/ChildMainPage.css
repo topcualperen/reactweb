@@ -9,12 +9,14 @@ h2{
     margin-left: 30px;
     color:white;
 }
-input {
-    margin: 30px;
+
+p {
+    margin: 50px;
     width: 306px;
     height: 52px;
     background: #D9D9D9;
     border-radius: 20px;
+
 }
 .container_button{
     position: absolute;
@@ -23,4 +25,8 @@ input {
     left: 100px;
     top: 200px;
     border-radius: 20px;
+}
+.child-info{
+    color:black;
+    padding: 10px;
 }
