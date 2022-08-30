@@ -5,8 +5,7 @@ import "./ChildMainPage.css"
 import { getContract } from "../../wallet-connection/WalletCard";
 import {useEffect,useState} from "react";
 import {ethers} from  "ethers";   
-
-
+import * as dayjs from "dayjs";
 
 export default function ChildInfo() {
     let [childBalance, setChildBalance] = useState();
@@ -16,7 +15,6 @@ export default function ChildInfo() {
         const address = await contract.signer.getAddress();
         const child = await contract.getChild(address);
         setChildBalance(ethers.utils.formatEther(child.balance));
-        console.log("balance of child ",child.balance);
     }
     useEffect(()=> {
         getChildBalance();
@@ -26,8 +24,7 @@ export default function ChildInfo() {
         const contract = await getContract();
         const address = await contract.signer.getAddress();
         const child = await contract.getChild(address);
-        setChildWithdrawDate(child.withdrawDate);
-        console.log("child withdraw date: ", child.withdrawDate);
+        setChildWithdrawDate(dayjs(child.withdrawDate).unix());
     }
     useEffect(()=>{
         getChildWithdrawDate();
