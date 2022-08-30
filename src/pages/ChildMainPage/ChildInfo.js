@@ -14,24 +14,24 @@ export default function ChildInfo() {
     const getChildBalance = async () => {
         const contract = await getContract();
         const address = await contract.signer.getAddress();
-        const child = await contract.provider.getBalance(address);
-        setChildBalance(ethers.utils.formatEther(child));
-        console.log("balance of child ",child);
+        const child = await contract.getChild(address);
+        setChildBalance(ethers.utils.formatEther(child.balance));
+        console.log("balance of child ",child.balance);
     }
     useEffect(()=> {
         getChildBalance();
     },[]);
 
-    // const getChildWithdrawDate = async () => {
-    //     const contract = await getContract();
-    //     //contracttan nasıl çekeceğimizi bilemedim
-    //     const withdrawDate = await contract.withdrawDate;
-    //     setChildWithdrawDate(withdrawDate);
-    //     console.log("child withdraw date: ", withdrawDate);
-    // }
-    // useEffect(()=>{
-    //     getChildWithdrawDate();
-    // },[]);
+    const getChildWithdrawDate = async () => {
+        const contract = await getContract();
+        const address = await contract.signer.getAddress();
+        const child = await contract.getChild(address);
+        setChildWithdrawDate(child.withdrawDate);
+        console.log("child withdraw date: ", child.withdrawDate);
+    }
+    useEffect(()=>{
+        getChildWithdrawDate();
+    },[]);
 
     return (
     <div className="container">
@@ -39,7 +39,7 @@ export default function ChildInfo() {
 
     <p className="child-info">{childBalance}</p>
     <h2>Devir Tarihi</h2>
-    {/* <p className="child-info"> {childWithdrawDate}</p> */}
+    <p className="child-info"> {childWithdrawDate}</p>
     <Button variant="contained" startIcon={<LocalAtmIcon />} className="container_button">
         Yatırımı Çek
     </Button>
